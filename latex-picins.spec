@@ -1,12 +1,14 @@
 Name: 		latex-picins
 Version: 	3.0
-Release: 	1
+Release: 	2
 Summary: 	LaTeX package allowing to wrap text around an inserted picture
 License: 	Public Domain
 Group: 		Publishing
 URL:		https://ctan.org/pkg/picins
 Source0: 	http://mirrors.ctan.org/macros/latex209/contrib/picins.zip
 Requires: 	texlive-latex texlive-collection-latex
+Requires(post): texlive-kpathsea.bin
+Requires(postun):texlive-kpathsea.bin
 BuildRequires:	texlive-latex texlive-collection-latex
 BuildArch:	noarch
 
@@ -25,9 +27,11 @@ install -m 644 *.{sty,msp} %{buildroot}%{_datadir}/texmf-dist/tex/latex/picins
 install -d -m 755 %{buildroot}%{_datadir}/texmf-dist/doc/latex/picins
 install -m 644 *.{doc,dvi} %{buildroot}%{_datadir}/texmf-dist/doc/latex/picins
 
-%post -p %_bindir/texhash
+%post
+%_bindir/texhash
 
-%postun -p %_bindir/texhash
+%postun
+%_bindir/texhash
 
 %files
 %defattr(-,root,root)
