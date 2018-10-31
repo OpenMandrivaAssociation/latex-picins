@@ -1,6 +1,6 @@
 Name: 		latex-picins
 Version: 	3.0
-Release: 	1
+Release: 	2
 Summary: 	LaTeX package allowing to wrap text around an inserted picture
 License: 	Public Domain
 Group: 		Publishing
